@@ -45,7 +45,7 @@ class Bot:
                 message = update['message']
                 sender_id = message['from']['id']
                 if sender_id not in self.users:
-                    logging.info("NEW USER: {id} ({first} {last})".format(id=sender_id, first=message['from']['first_name'], last=message['from']['last_name']))
+                    logging.info("NEW USER: {id}".format(id=sender_id))
                     self.users.append(sender_id) # new user
                 if 'voice' in message: # we only care about voice messages
                     voice_id = message['voice']['file_id']
