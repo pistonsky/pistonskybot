@@ -1,3 +1,5 @@
+import json
+import logging
 import tornado.httpserver
 import tornado.ioloop
 import tornado.web
@@ -8,8 +10,8 @@ from settings import *
 
 
 class MainHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.write("Hello, world")
+    def post(self):
+        logging.debug(json.dumps(self.request))
 
 application = tornado.web.Application([
     (r'/', MainHandler),
