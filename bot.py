@@ -10,7 +10,7 @@ def fast_urlencode(_dict):
     return '&'.join([k + '=' + str(v) for k, v in _dict.items()])
 
 class Bot:
-    BASE_URL = 'https://api.telegram.org/bot{}'.format(API_TOKEN)
+    BASE_URL = 'https://api.telegram.org/bot{token}'.format(token=API_TOKEN)
 
     def __init__(self):
         self.http_client = HTTPClient()
